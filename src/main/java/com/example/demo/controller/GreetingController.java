@@ -61,4 +61,9 @@ public static final String template = "Hello & Welcome to the greeting app, %s";
     public Greeting editGreeting(@RequestBody Greeting greeting, @PathVariable Integer id){
         return service.editGreeting(greeting, id);
     }
+    @DeleteMapping("/deleteGreeting/{id}")
+    public String deleteGreeting(@PathVariable Integer id){
+        service.deleteGreeting(id);
+        return "Data Deleted";
+    }
 }

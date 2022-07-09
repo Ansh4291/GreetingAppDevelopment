@@ -5,6 +5,7 @@ import com.example.demo.service.GreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
@@ -51,5 +52,9 @@ public static final String template = "Hello & Welcome to the greeting app, %s";
     @GetMapping("/greetingById/{id}")
     public Greeting getGreetingById(@PathVariable Integer id){
         return service.findGreetingById(id);
+    }
+    @GetMapping("/allGreetings")
+    public List<Greeting> findAllGreetings() {
+        return service.findGreetings();
     }
 }

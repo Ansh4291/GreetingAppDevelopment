@@ -38,4 +38,10 @@ public static final String template = "Hello & Welcome to the greeting app, %s";
     public String displayMessage(){
         return service.greetingMessage();
     }
+
+    @GetMapping("/greetingsWithUser")
+    public String greetingWithUserName(@RequestParam(value = "firstName", defaultValue = "") String firstName,
+                                @RequestParam(value = "lastName", defaultValue = "") String lastName){
+        return service.greetingWithUserName(firstName, lastName);
+    }
 }

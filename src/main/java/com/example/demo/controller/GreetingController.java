@@ -44,4 +44,8 @@ public static final String template = "Hello & Welcome to the greeting app, %s";
                                 @RequestParam(value = "lastName", defaultValue = "") String lastName){
         return service.greetingWithUserName(firstName, lastName);
     }
+    @PostMapping("/addGreeting")
+    public Greeting addGreeting(@RequestBody Greeting greeting){
+        return service.saveGreetings(greeting);
+    }
 }

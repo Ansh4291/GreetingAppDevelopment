@@ -57,4 +57,8 @@ public static final String template = "Hello & Welcome to the greeting app, %s";
     public List<Greeting> findAllGreetings() {
         return service.findGreetings();
     }
+    @PutMapping("/editGreeting/{id}")
+    public Greeting editGreeting(@RequestBody Greeting greeting, @PathVariable Integer id){
+        return service.editGreeting(greeting, id);
+    }
 }
